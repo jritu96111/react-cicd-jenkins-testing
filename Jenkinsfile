@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     // Deploy only the react-app service
-                    sh 'docker-compose up -d react-app'
+                    sh 'docker compose up -d react-app'
                 }
             }
         }
