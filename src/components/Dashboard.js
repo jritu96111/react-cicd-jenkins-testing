@@ -24,6 +24,7 @@ function Sidebar() {
         <li>Reports</li>
         <li>Settings</li>
         <li>Logout</li>
+        <li>Additional Item 1</li>
       </ul>
     </aside>
   );
