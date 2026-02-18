@@ -35,8 +35,8 @@ pipeline {
     steps {
         script {
             sh '''
-            docker rm -f react-container || true
-            docker run -d -p 3000:3000 --name react-container react-jenkins-docker-react-app
+            docker rm -f react-app || true
+            docker run -d -p 3000:3000 --name react-app react-jenkins-docker-react-app
             '''
         }
     }
