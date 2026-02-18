@@ -25,6 +25,7 @@ function Sidebar() {
         <li>Reports</li>
         <li>Settings</li>
         <li>Ritu</li>
+        <li>Profile</li>
       </ul>
     </aside>
   );
