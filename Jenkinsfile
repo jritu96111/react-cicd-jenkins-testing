@@ -31,14 +31,17 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                script {
-                    // Deploy only the react-app service
-                    sh 'docker compose up -d react-app'
-                }
-            }
+    stage('Deploy') {
+    steps {
+        script {
+            sh '''
+            docker rm -f react-container || true
+            docker run -d -p 3000:3000 --name react-container react-jenkins-docker-react-app
+            '''
         }
+    }
+}
+
     }
 
     post {
