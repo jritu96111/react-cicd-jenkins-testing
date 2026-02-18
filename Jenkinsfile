@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('* * * * *')
+    }
+
     environment {
         DOCKER_IMAGE = "react-jenkins-docker-react-app"
     }
@@ -34,10 +38,10 @@ pipeline {
     stage('Deploy') {
     steps {
         script {
-            sh '''
+            sh """
             docker rm -f react-app || true
-            docker run -d -p 3000:3000 --name react-app react-jenkins-docker-react-app
-            '''
+            docker run -d -p 3000:3000 --name react-app ${DOCKER_IMAGE}
+            """
         }
     }
 }
