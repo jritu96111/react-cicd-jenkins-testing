@@ -28,6 +28,7 @@ function Sidebar() {
         <li>Additional Item 2</li>
         <li>Additional Item 3</li>
         <li>Additional Item 4</li>
+        <li>Additional Item 5</li>
       </ul>
     </aside>
   );
