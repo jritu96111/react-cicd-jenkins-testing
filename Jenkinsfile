@@ -16,8 +16,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build the Docker image
-                    sh 'docker build -t $DOCKER_IMAGE .'
+                    // Build the Docker image with explicit Dockerfile path
+                    sh 'docker build -t $DOCKER_IMAGE -f Dockerfile .'
                 }
             }
         }
@@ -25,8 +25,8 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    // Run tests inside the Docker container
-                    sh 'docker run --rm $DOCKER_IMAGE npm test'
+                    // Run tests inside the Docker container with --watchAll=false
+                    sh 'docker run --rm $DOCKER_IMAGE npm test -- --watchAll=false'
                 }
             }
         }
@@ -34,8 +34,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Deploy the container
-                    sh 'docker-compose up -d'
+                    // Deploy only the react-app service
+                    sh 'docker-compose up -d react-app'
                 }
             }
         }
