@@ -23,6 +23,7 @@ function Sidebar() {
         <li>Home</li>
         <li>Reports</li>
         <li>Settings</li>
+        <li>Logout</li>
       </ul>
     </aside>
   );

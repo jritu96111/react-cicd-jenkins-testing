@@ -1,9 +1,11 @@
 pipeline {
     agent any
 
+    /*
     triggers {
         pollSCM('* * * * *')
     }
+    */
 
     environment {
         DOCKER_IMAGE = "react-jenkins-docker-react-app"
