@@ -25,7 +25,7 @@ function Sidebar() {
         <li>Settings</li>
         <li>Logout</li>
         <li>Additional Item 1</li>
-        <li>Additional Item 2</li>
+        {/* <li>Additional Item 2</li> */}
         <li>Additional Item 3</li>
         <li>Additional Item 4</li>
       </ul>
